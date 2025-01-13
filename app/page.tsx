@@ -13,7 +13,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="flex flex-col md:flex-row md:justify-between justify-stretch sm:gap-4 md:gap-12 lg:gap-16 sm:gap-20 md:gap-24 items-center pt-10 pb-2 md:py-16 lg:py-24">
+        <div className="flex flex-col md:flex-row md:justify-between justify-stretch sm:gap-4 md:gap-12 lg:gap-16 sm:gap-20 md:gap-24 items-center pt-10 pb-2 md:py-16 lg:pt-24 lg:pb-12">
           <div className="w-full h-[12rem] sm:h-[16rem] md:w-3/5 lg:w-1/2 md:h-[22rem] md:mb- flex items-center  justify-center">
             <Image
               className="w-full h-full object-cover rounded-xl"
