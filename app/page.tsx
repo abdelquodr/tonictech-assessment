@@ -13,7 +13,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="flex flex-col md:flex-row md:justify-between justify-stretch sm:gap-4 md:gap-12 lg:gap-16 sm:gap-20 md:gap-24 items-center pt-10 pb-2 md:py-16">
+        <div className="flex flex-col md:flex-row md:justify-between justify-stretch sm:gap-4 md:gap-12 lg:gap-16 sm:gap-20 md:gap-24 items-center pt-10 pb-2 md:py-16 lg:py-24">
           <div className="w-full h-[12rem] sm:h-[16rem] md:w-3/5 lg:w-1/2 md:h-[22rem] md:mb- flex items-center  justify-center">
             <Image
               className="w-full h-full object-cover rounded-xl"
@@ -21,10 +21,15 @@ export default function Home() {
               alt="card-header"
               width={100}
               height={100}
+              // layout="responsive"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              placeholder="blur"
+              blurDataURL="/assets/imgs/card-1.svg"
             />
           </div>
           <div className="md:w-2/5 lg:w-3/7">
-            <h5 className="py-1 sm:py-0 text-sm text-[#0A2640]  font-bold">
+            <h5 className="py-3 sm:py-0 text-sm text-[#0A2640]  font-bold">
               Category
               <span className="text-zinc-700 pl-3 md:pl-4 font-normal">
                 {" "}

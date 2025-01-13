@@ -1,14 +1,15 @@
-import React from "react";
 import Image from "next/image";
+import * as React from "react";
 
 type FooterDataType = {
   Landings: string[];
   Resources: string[];
   Company: string[];
 };
-type footerHeaderType = string[];
 
-const footerHeader: footerHeaderType = ["Landings", "Company", "Resources"];
+type FooterHeaderType = string[];
+
+const footerHeader: FooterHeaderType = ["Landings", "Company", "Resources"];
 const footerData: FooterDataType = {
   Landings: ["Home", "Product", "Services"],
   Company: ["Home", "Careers", "Services"],
@@ -39,11 +40,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row justify-between sm:w-[55%]  md:w-[60%] lg:w-[70%] md:pr-10">
-          {footerHeader?.map((item, index) => (
+        <div className="flex flex-col sm:flex-row justify-between sm:w-[55%] md:w-[60%] lg:w-[70%] md:pr-10">
+          {footerHeader.map((item, index) => (
             <div className="pb-3 md:pb-0" key={index}>
               <h5 className="pb-2 text-sm font-bold">{item}</h5>
-              {footerData[item as keyof typeof footerData]?.map((li, ind) => (
+              {footerData[item as keyof FooterDataType]?.map((li, ind) => (
                 <li
                   className="cursor-pointer list-none py-1 md:py-3 text-sm font-normal text-zinc-700"
                   key={ind}
@@ -56,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="relative divide-y text-[12px] sm:m-0 sm:p-0 text-xx py-5">
-        <div className="">All rights reserved.</div>
+        <div>All rights reserved.</div>
       </div>
     </div>
   );

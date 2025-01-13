@@ -2,8 +2,14 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui";
+import Link from "next/link";
 
-const navlinks = [
+interface NavLink {
+  name: string;
+  link: string;
+}
+
+const navLinks: NavLink[] = [
   { name: "Product", link: "/product" },
   { name: "Services", link: "/services" },
   { name: "About", link: "/about" },
@@ -11,6 +17,8 @@ const navlinks = [
 
 export default function Navbar() {
   const [toggle, settoggle] = React.useState(false);
+
+  const memoizedNavLinks = React.useMemo(() => navLinks, []);
 
   return (
     <div>
@@ -65,17 +73,17 @@ export default function Navbar() {
                 : "left-[-490px] text-black md:opacity-100 opacity-0"
             }`}
           >
-            {navlinks.map((link) => (
+            {memoizedNavLinks.map((link) => (
               <li
                 key={link.name}
                 className="md:mx-8 text-sm font-semibold h-8 leading-8 md:my-0 my-7"
               >
-                <a
+                <Link
                   href={link.link}
-                  className="text-[#0A2640] duration-500 transition-all ease-in-out "
+                  className="text-[#0A2640] duration-500 transition-all ease-in-out"
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
             <Button

@@ -27,6 +27,11 @@ export default function card({
             alt="logo"
             width={100}
             height={100}
+            // layout="responsive"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder="blur"
+            blurDataURL={imgSrc}
           />
         </div>
       </div>
@@ -44,7 +49,7 @@ export default function card({
       </div>
       <div className="flex sm:py-2 flex-row items-center align-center">
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarImage src={"/assets/imgs/avatar-img.svg"} alt="avatar" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <span className="font-normal text-[13px] pl-3">{author}</span>
